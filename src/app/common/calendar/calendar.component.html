@@ -1,0 +1,12 @@
+<div class="calendar">
+  <b-selector placeholderSelector="Выберите день"
+              titleSelector="День"
+              typeList="calendarDay"
+              (handleClick)="getDay($event)"
+  ></b-selector>
+  <b-selector placeholderSelector="Выберите месяц"
+              typeList="calendarMonth"
+              titleSelector="Месяц"
+              (handleClick)="getMonth($event)"
+  ></b-selector>
+</div>

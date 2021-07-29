@@ -1,0 +1,9 @@
+<div class="training">
+  <b-calendar (handleClick)="getDate($event)"></b-calendar>
+  <b-time (handleClick)="getTime($event)"></b-time>
+  <b-selector placeholderSelector="Выберите тренера"
+              titleSelector="Тренер"
+              [itemList]="coachData"
+              (handleClick)="getCoach($event)"
+  ></b-selector>
+</div>

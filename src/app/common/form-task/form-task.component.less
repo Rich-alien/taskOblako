@@ -1,0 +1,56 @@
+@import './../../../assets/style/shared';
+
+.form-task {
+  padding: 0 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.08);
+  width: 866px;
+  height: 100vh;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    &-buttons{
+      display: flex;
+      align-items: center;
+    }
+    &-tick {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 26px;
+      width: 32px;
+      height: 32px;
+      border-radius: 90%;
+      cursor: pointer;
+      &:hover{
+        background: @color-grey-middle-second;
+      }
+    }
+    &-cross {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 90%;
+      cursor: pointer;
+      &:hover{
+        background: @color-grey-middle-second;
+      }
+    }
+    &-panel {
+      display: flex;
+      align-items: center;
+    }
+
+    &-basic {
+      margin-right: 24px;
+    }
+  }
+}

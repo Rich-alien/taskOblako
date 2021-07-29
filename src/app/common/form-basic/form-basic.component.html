@@ -1,0 +1,19 @@
+<div class="form-basic">
+  <b-selector placeholderSelector="Тренинг"
+              titleSelector="Мероприятие"
+              [isAddControlActive]="true"
+              [itemList]="eventsData"
+              (handleClick)="getEventName($event)"
+  ></b-selector>
+  <div *ngFor="let event of getCountEvent(3); let i = index" class="form-basic__date">
+    <b-training
+      (handleClick)="getTraining($event,i)"
+    ></b-training>
+  </div>
+  <b-selector placeholderSelector="Выберите участников"
+              titleSelector="Участники"
+              [isMultiMode] = "true"
+              [itemList]="membersData"
+              (handleClick)="getMembers($event)"
+  ></b-selector>
+</div>

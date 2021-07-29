@@ -1,0 +1,23 @@
+<div class="form-task">
+  <div class="form-task__title">
+    <h2 class="form-task__title-header">Планирование</h2>
+    <div class="form-task__title-buttons">
+      <svg-icon class="form-task__title-tick"
+                src="assets/icons/tick.svg"
+                (click)="saveBasicInformation()">
+      </svg-icon>
+      <div
+        class="form-task__title-cross"
+        (click)="closePopup()">
+        <svg-icon src="assets/icons/cross.svg"></svg-icon>
+      </div>
+    </div>
+  </div>
+  <div class="form-task__title-panel">
+    <b-text-field class="form-task__title-basic" text="Основное"></b-text-field>
+    <b-text-field text="Участники"></b-text-field>
+  </div>
+  <b-form-basic></b-form-basic>
+  <!--Will be implemented later-->
+  <!-- <b-form-members></>b-form-members>-->
+</div>

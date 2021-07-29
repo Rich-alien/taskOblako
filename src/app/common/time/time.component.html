@@ -1,0 +1,11 @@
+<div class="time">
+  <b-selector placeholderSelector="00"
+              titleSelector="Время"
+              typeList="timeHour"
+              (handleClick)="getHour($event)"
+  ></b-selector>
+  <b-selector placeholderSelector="00"
+              typeList="timeMinute"
+              (handleClick)="getMinute($event)"
+  ></b-selector>
+</div>
