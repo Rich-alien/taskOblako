@@ -14,6 +14,8 @@ import {InputFieldComponent} from "./input-field/input-field.component";
 import {CalendarComponent} from "./calendar/calendar.component";
 import {TimeComponent} from "./time/time.component";
 import {TrainingComponent} from "./trening/training.component";
+import {NavInformationComponent} from "./nav-information/nav-information.component";
+import {FilterComponent} from "./filter/filter.component";
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import {TrainingComponent} from "./trening/training.component";
     InputFieldComponent,
     CalendarComponent,
     TimeComponent,
-    TrainingComponent
+    TrainingComponent,
+    NavInformationComponent,
+    FilterComponent
   ],
   exports: [
     ButtonComponent,
@@ -47,7 +51,9 @@ import {TrainingComponent} from "./trening/training.component";
     InputFieldComponent,
     CalendarComponent,
     TimeComponent,
-    TrainingComponent
+    TrainingComponent,
+    NavInformationComponent,
+    FilterComponent
   ]
 
 })

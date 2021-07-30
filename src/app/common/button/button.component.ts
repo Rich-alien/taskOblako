@@ -7,16 +7,9 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent {
-  // @Input()
-  // type: 'primary' | 'secondary' | 'flat' | 'action' = 'primary';
-  //
-  // @Input()
-  // buttonType: 'button' | 'reset' | 'submit' = 'button';
-
   @Input()
   hasIcon = false;
-  // @Input()
-  // size: 'default' | 'small' = 'default';
+
   @Input()
   text: string = '';
 

@@ -2,13 +2,40 @@
 .header{
   display: flex;
   justify-content: space-between;
-  margin: 24px;
+  width: 100%;
   align-items: center;
   height: 64px;
-  &-burger{
-    height: 100%;
+  &__burger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 90%;
+    width: 38px;
+    height: 38px;
+    &:hover{
+      background: @color-grey-light;
+    }
   }
-  &-schedule{
-    color: @color-blue;
+  &__text{
+    display: none;
+    //font-size: 14px;
+    @media @mobile{
+      display: block;
+    }
+  }
+  &__button{
+    &-desktop{
+      display: block;
+      @media @mobile{
+        display: none;
+      }
+    }
+    &-mobile{
+      display: none;
+      @media @mobile{
+        display: block;
+      }
+    }
   }
 }

@@ -16,6 +16,10 @@ export class TaskComponent implements OnInit {
 
   progress: number = 0;
 
+  typeOfLessons: number = 0;
+
+  isGroupList: boolean = true;
+
   constructor(private taskService: TaskService) {
 
   }
@@ -23,12 +27,16 @@ export class TaskComponent implements OnInit {
   ngOnInit() {
     this.taskService.getTaskData().subscribe(data=> {
       this.taskData = data;
-      for(let training of this.taskData){
-        console.log(training.training)
-      }
     });
   }
-
+  switchToGroup(): void{
+    this.typeOfLessons = 0;
+    this.isGroupList = true;
+  }
+  switchToIndividual(): void{
+    this.typeOfLessons = 1;
+    this.isGroupList = false;
+  }
   private setButtonIcon(): void {
     switch (this.icon) {
       case 'progress' :

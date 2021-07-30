@@ -1,0 +1,36 @@
+<div class="filter">
+  <div>
+    <svg-icon
+      class="filter__input-icon"
+      src="assets/icons/lens.svg">
+    </svg-icon>
+    <input class="filter__input"
+           placeholder="Поиск"
+           type="text"
+           (change)="changeValue($event)">
+  </div>
+  <div class="filter__desktop">
+    <b-selector
+      placeholderSelector="Выберите одну"
+      titleSelector="Програма"
+      [itemList]="eventsData">
+    </b-selector>
+    <b-selector
+      placeholderSelector="Выберите одну"
+      titleSelector="Период"
+      [itemList]="eventsData">
+    </b-selector>
+    <b-selector
+      placeholderSelector="Выберите одну"
+      titleSelector="Статус"
+      [itemList]="eventsData">
+    </b-selector>
+  </div>
+  <div class="filter__mobile">
+    <b-selector
+      placeholderSelector="Выберите одну"
+      titleSelector="Сортровка"
+      [itemList]="eventsData">
+    </b-selector>
+  </div>
+</div>

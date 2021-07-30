@@ -1,0 +1,53 @@
+@import './../../../assets/style/shared';
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 744px;
+  margin-bottom: 36px;
+  @media @mobile {
+    width: 100%;
+    flex-direction: column;
+
+  }
+  &__desktop {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    //margin-right: 24px;
+    @media @mobile {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    @media @mobile {
+      display: block;
+    }
+  }
+
+  &__input {
+    padding-left: 31px;
+    padding-bottom: 7px;
+    border: none;
+    border-bottom: 1px solid @color-grey-middle-first;
+    outline: none;
+    @media @mobile {
+      width: 322px;
+      margin-bottom: 34px;
+    }
+    &-icon {
+      content: "";
+      position: relative;
+      left: 3px;
+      top: 22px;
+    }
+
+    &:focus {
+      border: none;
+      border-bottom: 1px solid @color-blue;
+    }
+  }
+}

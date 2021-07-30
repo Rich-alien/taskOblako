@@ -3,37 +3,100 @@
 .task {
   display: flex;
   flex-direction: column;
-  &__title{
+
+  &__navigation {
     display: flex;
-    justify-content: space-between;
-    &-data{
-      color: @color-grey-middle;
-      width: 82px;
+    width: 202px;
+
+    &-group {
+      cursor: pointer;
+      margin-right: 24px;
     }
-    &-name{
-      color:@color-grey-middle;
-      width: 436px;
-    }
-    &-members{
-      color:@color-grey-middle;
-      width: 95px;
-    }
-    &-coach{
-      color:@color-grey-middle;
-      width: 95px;
-    }
-    &-progress{
-      color:@color-grey-middle;
-      width: 153px;
+
+    &-individual {
+      cursor: pointer;
     }
   }
+
+  &__information {
+    margin-bottom: 58px;
+
+    &-text {
+      color: @color-grey-middle;
+    }
+  }
+
+  &__horizon-line {
+    border-bottom: 1px solid @color-grey-middle-first;
+    margin-bottom: 72px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &-data {
+      color: @color-grey-middle;
+      width: 82px;
+      @media @mobile {
+        width: 65px;
+      }
+    }
+
+    &-name {
+      color: @color-grey-middle;
+      width: 436px;
+      @media @mobile {
+        width: 52px;
+      }
+    }
+
+    &-members {
+      &__desktop {
+        display: block;
+        color: @color-grey-middle;
+        width: 95px;
+        @media @mobile {
+          display: none;
+        }
+      }
+
+      &__mobile {
+        display: none;
+        width: 15px;
+        color: @color-grey-middle;
+        @media @mobile {
+          display: block;
+        }
+      }
+
+    }
+
+    &-coach {
+      color: @color-grey-middle;
+      width: 95px;
+      @media @mobile {
+        display: none;
+      }
+    }
+
+    &-progress {
+      color: @color-grey-middle;
+      width: 153px;
+      @media @mobile {
+        width: 51px;
+      }
+    }
+  }
+
   &__list {
     display: flex;
     justify-content: space-between;
     width: 100%;
     text-align: left;
     align-items: center;
-    padding: 8px 8px;
+    padding: 2px 8px;
     border-radius: 4px;
 
     &:hover {
@@ -44,38 +107,77 @@
       display: flex;
       width: 86px;
       align-items: center;
+      @media @mobile {
+        width: 86px;
+      }
     }
-    &-time{
+
+    &-time {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
       display: flex;
     }
-    &-day{
+
+    &-day {
       margin-right: 4px;
     }
-    &-month{
+
+    &-month {
       margin-right: 4px;
     }
+
     &-name {
       width: 446px;
       text-overflow: ellipsis;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      @media @mobile {
+        width: 96px;
+      }
     }
 
     &-members {
       width: 104px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      @media @mobile {
+        width: 39px;
+      }
     }
 
     &-coach {
       width: 104px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      @media @mobile {
+        display: none;
+      }
     }
-
     &-progress {
       width: 144px;
       display: flex;
       align-items: center;
-
-      &__text {
-        margin-right: 73px;
+      @media @mobile {
+        width: 47px;
       }
+      &__text {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        margin-left: 4px;
+        margin-right: 73px;
+        color: @color-grey-middle;
+        @media @mobile {
+          margin-right: 0;
+        }
+      }
+    }
 
+    &-setting {
       &__icon {
         display: flex;
         align-items: center;
@@ -84,6 +186,9 @@
         width: 32px;
         height: 32px;
         cursor: pointer;
+        @media @mobile {
+          display: none;
+        }
         &:hover {
           background-color: @color-grey-middle-second;
         }

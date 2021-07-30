@@ -19,10 +19,12 @@
     padding-bottom: 6px;
     background-color: @color-white;
     border: none;
-    border-bottom: 2px solid @color-grey-middle;
+    border-bottom: 1px solid @color-grey-middle-first;
     cursor: pointer;
     outline: none;
-
+    @media @mobile {
+      width: 322px;
+    }
     &-container {
       display: flex;
       position: relative;
@@ -56,7 +58,7 @@
   }
 
   &__input:focus {
-    border-bottom: 2px solid @color-blue;
+    border-bottom: 1px solid @color-blue;
   }
 
   &__list {
@@ -70,7 +72,6 @@
     border-radius: 4px;
     padding-top: 12px;
     overflow: auto;
-
     &-item {
       display: flex;
       align-items: center;

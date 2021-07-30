@@ -1,6 +1,13 @@
 <div class="header">
-  <svg-icon src="assets/icons/shape.svg"></svg-icon>
-  <b-button routerLink="/form"
+  <div class="header__burger">
+    <svg-icon src="assets/icons/shape.svg"></svg-icon>
+  </div>
+  <h4 class="header__text">Обучение</h4>
+  <b-button class="header__button-desktop"
+            routerLink="/form"
             text="Запланировать"
+            [hasIcon]="true"></b-button>
+  <b-button class="header__button-mobile"
+            routerLink="/form"
             [hasIcon]="true"></b-button>
 </div>

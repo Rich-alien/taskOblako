@@ -1,9 +1,8 @@
-<b-header></b-header>
-<!--<div>-->
-<!--  <div class="main">-->
-<!--    <svg-icon src="assets/icons/union.svg"></svg-icon>-->
-<!--    <h1 class="main-text">Планирование</h1>-->
-<!--  </div>-->
-<!--</div>-->
-<b-task></b-task>
-<router-outlet></router-outlet>
+<div class="app">
+  <b-header></b-header>
+  <div class="app__container">
+    <b-nav-information></b-nav-information>
+    <b-task></b-task>
+    <router-outlet></router-outlet>
+  </div>
+</div>

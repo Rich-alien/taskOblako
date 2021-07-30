@@ -51,7 +51,6 @@ export class FormService {
       training: this.setTraining(),
       members: this.setMembers()
     }
-    console.log(task);
     return task;
   }
 }
