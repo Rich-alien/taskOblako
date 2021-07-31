@@ -30,13 +30,14 @@
     <div class="task__list">
       <div class="task__list-data">
         <div class="task__list-time">
-          <span class="task__list-day">
-            {{task.training[typeOfLessons].date.day}}</span>
-          <span class="task__list-month">
-            {{task.training[typeOfLessons].date.month}},</span>
+          <h4 class="task__list-day">
+            {{task.training[typeOfLessons].date.day}}</h4>
+          <h4 class="task__list-month">
+            {{task.training[typeOfLessons].date.month}},</h4>
         </div>
         <div class="task__list-time">
-          {{task.training[typeOfLessons].time.hour}}:{{task.training[typeOfLessons].time.minute}}
+          <h4>{{task.training[typeOfLessons].time.hour}}:</h4>
+          <h4>{{task.training[typeOfLessons].time.minute}}</h4>
         </div>
       </div>
       <h4 class="task__list-name">

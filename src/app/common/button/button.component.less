@@ -12,6 +12,20 @@
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
+  &._blue{
+    background-color:@color-blue;
+    color: white;
+    &:hover{
+      background: @color-blue-mini-light;
+      width: calc(100% - 17px);
+    }
+    &:focus{
+      background: @color-blue-deep-mini-dark;
+    }
+    &:active{
+      background: @color-blue-deep-mini-dark;
+    }
+  }
   &:hover{
     background: @color-blue-light;
     border: 2px solid @color-blue-light;
@@ -24,7 +38,7 @@
     background: @color-blue-dark;
     border: 2px solid @color-blue-dark;
   }
-  &__icon {
+  &-icon {
     margin-right: 12px;
   }
 

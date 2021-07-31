@@ -5,6 +5,7 @@
   @media @mobile {
     display: none;
   }
+
   &__path {
     color: @color-grey-middle;
   }
@@ -13,6 +14,10 @@
     display: flex;
     align-items: center;
     margin-top: 26px;
+
+    &-text {
+      .font-bold();
+    }
 
     &-svg {
       margin-right: 18px;

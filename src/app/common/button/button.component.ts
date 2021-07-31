@@ -11,6 +11,9 @@ export class ButtonComponent {
   hasIcon = false;
 
   @Input()
+  isBlue: boolean = false;
+
+  @Input()
   text: string = '';
 
   @Input()
