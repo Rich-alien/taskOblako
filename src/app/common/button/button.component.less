@@ -12,32 +12,56 @@
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
-  &._blue{
-    background-color:@color-blue;
-    color: white;
-    &:hover{
-      background: @color-blue-mini-light;
-      width: calc(100% - 17px);
+
+  &._border {
+    border: 2px solid @color-blue;
+
+    &:hover {
+      border: 2px solid @color-blue;
     }
-    &:focus{
+
+    &:focus {
+      border: 2px solid @color-blue;
+    }
+
+    &:active {
+      border: 2px solid @color-blue;
+    }
+  }
+
+  &._blue {
+    background-color: @color-blue;
+    color: white;
+
+    &:hover {
+      background: @color-blue-mini-light;
+    }
+
+    &:focus {
       background: @color-blue-deep-mini-dark;
     }
-    &:active{
+
+    &:active {
       background: @color-blue-deep-mini-dark;
     }
   }
-  &:hover{
+
+  &:hover {
     background: @color-blue-light;
+    padding: 15px 16px;
     border: 2px solid @color-blue-light;
   }
-  &:focus{
+
+  &:focus {
     background: @color-blue-dark;
     border: 2px solid @color-blue-dark;
   }
-  &:active{
+
+  &:active {
     background: @color-blue-dark;
     border: 2px solid @color-blue-dark;
   }
+
   &-icon {
     margin-right: 12px;
   }

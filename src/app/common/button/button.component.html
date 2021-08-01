@@ -1,6 +1,10 @@
 <button class="button"
         [class._blue]="isBlue"
+        [class._border]="hasBorder"
         [disabled]="isDisabled">
-  <svg-icon  *ngIf="hasIcon" class="button-icon icon _fill-blue"  [class._fill-white]="isBlue" src="assets/icons/plus.svg"></svg-icon>
+  <svg-icon *ngIf="hasIcon"
+            class="button-icon icon _fill-blue"
+            [class._fill-white]="isBlue"
+            src="assets/icons/plus.svg"></svg-icon>
   {{text}}
 </button>

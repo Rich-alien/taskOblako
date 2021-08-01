@@ -29,6 +29,7 @@ export class TaskComponent implements OnInit {
       this.taskData = data;
     });
   }
+
   switchToGroup(): void{
     this.typeOfLessons = 0;
     this.isGroupList = true;

@@ -1,11 +1,30 @@
 <div class="time">
-  <b-selector placeholderSelector="00"
-              titleSelector="Время"
-              typeList="timeHour"
-              (handleClick)="getHour($event)"
-  ></b-selector>
-  <b-selector placeholderSelector="00"
-              typeList="timeMinute"
-              (handleClick)="getMinute($event)"
-  ></b-selector>
+  <div class="time__input">
+    <b-text-field label="Время"
+                  nameIcon="clock"
+                  [text]="abbreviatedClockDisplay()"
+                  [hasUnderLine]="isOpened"
+                  [hasCross]="true"
+                  [isOpened]="isOpened"
+                  (click)="openClock()">
+    </b-text-field>
+  </div>
+  <div class="time__area" *ngIf="isOpened">
+    <div class="time__area-title">
+      <h4>Ч</h4>
+      <h4>М</h4>
+    </div>
+    <div class="time__area-slider">
+      <div class="time__area-hour">
+        <ng-container *ngFor="let hour of hourData">
+          <h4 class="time" (click)="choseHour(hour)">{{hour}}</h4>
+        </ng-container>
+      </div>
+      <div class="time__area-minute">
+        <ng-container *ngFor="let minute of minuteData">
+          <h4 (click)="choseMinute(minute)">{{minute}}</h4>
+        </ng-container>
+      </div>
+    </div>
+  </div>
 </div>

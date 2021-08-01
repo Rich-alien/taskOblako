@@ -1,47 +1,81 @@
 @import './../../../assets/style/shared';
-.selector {
-  width: 100%;
 
-  svg path {
-    stroke: @color-blue-dark;
-  }
+.selector {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 100%;
+  height: 40px;
 
   &__title {
+    position: absolute;
+    top: 0;
+    margin-left: 31px;
     color: @color-grey-middle;
+
   }
 
   &__input {
-    margin-top: 4px;
-    display: flex;
-    width:100%;
-    align-items: center;
-    justify-content: space-between;
+    padding-left: 31px;
+    width: 100%;
     padding-bottom: 6px;
     background-color: @color-white;
     border: none;
-    border-bottom: 1px solid @color-grey-middle-first;
+    border-bottom: 2px solid @color-grey-middle-first;
     cursor: pointer;
     outline: none;
+
+    &._delete {
+      padding-left: 0;
+    }
+
+    &::placeholder {
+
+      font-size: 12px;
+      line-height: 16px;
+      color: @color-grey-placeholder;
+    }
+
+    &-men {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background-color: @color-grey-middle-first;
+      border-radius: 90%;
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+
     @media @mobile {
       width: 322px;
     }
+
     &-container {
       display: flex;
       position: relative;
       align-items: center;
       text-align: center;
     }
-
+    &-cross{
+      content: "";
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+      top: 0;
+    }
     &-arrow {
       content: "";
+
       &-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-        right: 15px;
         position: absolute;
-        width: 24px;
-        height: 24px;
+        right: 0;
+        top: 3px;
+        width: 12px;
+        height: 12px;
         cursor: pointer;
         border-radius: 50%;
         transform: rotate(180deg);
@@ -49,20 +83,17 @@
         &._rotate {
           transform: rotate(0deg);
         }
-
-        &:hover {
-          background: @color-blue-light;
-        }
       }
     }
   }
 
   &__input:focus {
-    border-bottom: 1px solid @color-blue;
+    border-bottom: 2px solid @color-blue;
   }
 
   &__list {
     position: absolute;
+    top: 40px;
     z-index: 1;
     background-color: @color-white;
     max-height: 232px;
@@ -72,6 +103,7 @@
     border-radius: 4px;
     padding-top: 12px;
     overflow: auto;
+
     &-item {
       display: flex;
       align-items: center;

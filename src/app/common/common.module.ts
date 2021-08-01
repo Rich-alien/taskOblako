@@ -11,11 +11,13 @@ import {SelectorComponent} from "./selector/selector.component";
 import {FormBasicComponent} from "./form-basic/form-basic.component";
 import {TextFieldComponent} from "./text-field/text-field.component";
 import {InputFieldComponent} from "./input-field/input-field.component";
-import {CalendarComponent} from "./calendar/calendar.component";
+
 import {TimeComponent} from "./time/time.component";
 import {TrainingComponent} from "./trening/training.component";
 import {NavInformationComponent} from "./nav-information/nav-information.component";
 import {FilterComponent} from "./filter/filter.component";
+import {CalendarComponent} from "./calendare/calendar.component";
+
 
 
 @NgModule({

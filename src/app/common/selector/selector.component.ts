@@ -29,16 +29,14 @@ export class SelectorComponent {
   @Input()
   isAddControlActive: boolean = false;
   @Input()
-  typeList: "data" | "calendarDay" | "calendarMonth" | "timeHour" | "timeMinute" = "data";
+  hasIcon: boolean = false;
+
 
   @Output() handleClick: EventEmitter<string[]> = new EventEmitter();
 
   value = '';
 
   isNotFound = true;
-
-  monthData = ["янв", "фев", "мар", "апр", "май",
-    "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
 
   filteredSuggestions: string[] = [];
 
@@ -50,7 +48,7 @@ export class SelectorComponent {
 
   isCompleted = true;
 
-  timeData = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09"];
+
 
   private readonly MINIMUM_SEARCH_CHARS: number = 2;
 
@@ -75,14 +73,8 @@ export class SelectorComponent {
       this.isOpened = !this.isOpened;
     }
   };
-  isNotData(){
-    // @ts-ignore
-    if(this.typeList !== "data" || this.typeList !== "calendarMouth"){
-      return "_time";
-    } else {
-      return ""
-    }
-  }
+
+
   searchSelectorElement(element: HTMLElement): HTMLElement | null {
     if (element.classList.contains('selector')) {
       return element;
@@ -97,22 +89,6 @@ export class SelectorComponent {
   filterItems(): string[] {
     if (this.itemList.length !== 0) {
       this.filteredSuggestions = this.itemList;
-    } else if (this.typeList === "calendarMonth") {
-      this.filteredSuggestions = this.monthData;
-    } else if (this.typeList === "calendarDay" && this.filteredSuggestions.length == 0) {
-      for (let i = 1; i <= 31; i++) {
-        this.filteredSuggestions.push(String(i));
-      }
-    } else if (this.typeList === "timeHour" && this.filteredSuggestions.length == 0) {
-      for (let i = 10; i <= 24; i++) {
-        this.filteredSuggestions = this.timeData;
-        this.filteredSuggestions.push(String(i));
-      }
-    } else if (this.typeList === "timeMinute" && this.filteredSuggestions.length == 0) {
-      for (let i = 10; i <= 60; i++) {
-        this.filteredSuggestions = this.timeData;
-        this.filteredSuggestions.push(String(i));
-      }
     }
     if (this.value.length < this.MINIMUM_SEARCH_CHARS) {
       return this.filteredSuggestions;
@@ -159,7 +135,10 @@ export class SelectorComponent {
     }
     this.handleClick.emit(this.selectedItems);
   }
-
+  deleteText(): void{
+    this.selectedItems = [];
+    this.selectedHint = '';
+  }
   addItem(): void {
     this.itemList.push(this.value);
     this.isNotFound = true;

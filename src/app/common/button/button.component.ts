@@ -8,7 +8,10 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 })
 export class ButtonComponent {
   @Input()
-  hasIcon = false;
+  hasIcon: boolean = false;
+
+  @Input()
+  hasBorder: boolean = false;
 
   @Input()
   isBlue: boolean = false;
@@ -17,5 +20,5 @@ export class ButtonComponent {
   text: string = '';
 
   @Input()
-  isDisabled = false;
+  isDisabled: boolean = false;
 }

@@ -1,0 +1,60 @@
+<div class="calendar">
+  <div class="calendar__input">
+    <b-text-field label="Дата"
+                  nameIcon="calendar"
+                  [text]="abbreviatedDateDisplay()"
+                  [hasUnderLine]="isOpened"
+                  [hasCross]="true"
+                  [isOpened]="isOpened"
+                  (click)="openCalendar()">
+    </b-text-field>
+  </div>
+  <div class="calendar__area" *ngIf="isOpened">
+
+    <div class="calendar__area-data">
+      <svg-icon
+        class="calendar__area-arrowL"
+        src="assets/icons/arrow-calendar.svg"
+        (click)="decrementData()"
+      ></svg-icon>
+      <div class="calendar__area-index"
+           (click)="openChoseMonth()">
+        <h4 *ngIf="!isOpenChoseMonth">{{selectedMonth}},</h4>
+        <h4 class="calendar__area-year">{{choseYear}}</h4>
+          <svg-icon
+            *ngIf="!isOpenChoseMonth"
+            class="calendar__area-triangle"
+            src="assets/icons/triangle.svg">
+          </svg-icon>
+      </div>
+      <svg-icon
+        class="calendar__area-arrowR"
+        src="assets/icons/arrow-calendar.svg"
+        (click)="incrementData()"
+      ></svg-icon>
+    </div>
+    <div *ngIf="isOpenChoseMonth"
+         class="calendar__list">
+      <ng-container *ngFor="let month of monthData">
+        <div class="calendar__list-month"
+             [class._active]="selectedMonth === month"
+             (click)="selectMonth(month)">
+          <h4 class="calendar__list-text">{{month}}</h4>
+        </div>
+      </ng-container>
+    </div>
+    <div *ngIf="!isOpenChoseMonth"
+         class="calendar__list">
+      <ng-container *ngFor="let week of weeksData">
+        <h4 class="calendar__list-week">{{week}}</h4>
+      </ng-container>
+      <ng-container *ngFor="let day of dayData">
+        <div class="calendar__list-day"
+             [class._active]="selectedDay === day"
+             (click)="selectDay(day)">
+          <h4 class="calendar__list-number">{{day}}</h4>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
