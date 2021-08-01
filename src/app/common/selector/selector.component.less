@@ -1,10 +1,8 @@
 @import './../../../assets/style/shared';
 
 .selector {
-  display: flex;
-  align-items: flex-end;
-  position: relative;
   width: 100%;
+  padding-top: 17px;
   height: 40px;
 
   &__title {
@@ -57,13 +55,15 @@
       align-items: center;
       text-align: center;
     }
-    &-cross{
+
+    &-cross {
       content: "";
       position: absolute;
       cursor: pointer;
       right: 0;
       top: 0;
     }
+
     &-arrow {
       content: "";
 
@@ -93,7 +93,6 @@
 
   &__list {
     position: absolute;
-    top: 40px;
     z-index: 1;
     background-color: @color-white;
     max-height: 232px;

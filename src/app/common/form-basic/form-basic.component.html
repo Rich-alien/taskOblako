@@ -1,6 +1,8 @@
 <div class="form-basic">
-  <b-selector placeholderSelector="Тренинг"
-              titleSelector="Мероприятие"
+  <b-selector
+    class="form-basic__program"
+    placeholderSelector="Программа"
+              titleSelector="Программа"
               [isAddControlActive]="true"
               [itemList]="eventsData"
               (handleClick)="getEventName($event)"
