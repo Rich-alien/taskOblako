@@ -34,7 +34,6 @@ export class SelectorComponent {
   @Input()
   hasIconMan: boolean = false;
 
-
   @Output() handleClick: EventEmitter<string[]> = new EventEmitter();
 
   value = '';

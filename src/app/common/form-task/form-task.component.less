@@ -10,15 +10,28 @@
   width: 866px;
   height: 100vh;
 
+  &__horizon-line {
+    width: 100%;
+    border-bottom: 1px solid @color-grey-middle-first;
+  }
+
   &__title {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px 0;
-    &-buttons{
+
+    &-nav {
+      width: 68px;
+      cursor: pointer;
+      margin-right: 24px;
+    }
+
+    &-buttons {
       display: flex;
       align-items: center;
     }
+
     &-tick {
       display: flex;
       align-items: center;
@@ -28,10 +41,12 @@
       height: 32px;
       border-radius: 90%;
       cursor: pointer;
-      &:hover{
+
+      &:hover {
         background: @color-grey-middle-second;
       }
     }
+
     &-cross {
       display: flex;
       align-items: center;
@@ -40,14 +55,16 @@
       height: 32px;
       border-radius: 90%;
       cursor: pointer;
-      &:hover{
+
+      &:hover {
         background: @color-grey-middle-second;
+        margin-bottom: 32px;
       }
     }
+
     &-panel {
       display: flex;
       align-items: center;
-      margin-bottom: 32px;
     }
 
     &-basic {

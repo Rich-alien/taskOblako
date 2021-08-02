@@ -1,4 +1,9 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit
+} from '@angular/core';
 import {TaskService} from "../../services/task.service";
 import {FormService} from "../../services/form.service";
 
@@ -10,7 +15,7 @@ import {FormService} from "../../services/form.service";
 })
 export class FormBasicComponent implements OnInit {
   @Input()
-  isBasic: boolean = true;
+  switchForm: boolean = true;
 
   eventsData = [
     "Страхование с заботой о клиенте",
@@ -22,17 +27,6 @@ export class FormBasicComponent implements OnInit {
 
   membersData: string[] = [];
   taskData = [];
-
-
-  constructor(private taskService: TaskService,
-              private formService: FormService) {
-  }
-
-  ngOnInit(): void {
-    this.formService.getAllMembersData().subscribe(members => {
-      this.membersData = members as string[];
-    })
-  }
 
   getCountEvent(id: number) {
     return new Array(id);
@@ -49,4 +43,16 @@ export class FormBasicComponent implements OnInit {
   getMembers(members: string[]) {
     this.formService.getMembers(members);
   }
+
+  constructor(private taskService: TaskService,
+              private formService: FormService) {
+  }
+
+  ngOnInit(): void {
+    this.formService.getAllMembersData().subscribe(members => {
+      this.membersData = members as string[];
+    })
+  }
+
+
 }

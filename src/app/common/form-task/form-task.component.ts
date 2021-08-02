@@ -11,6 +11,8 @@ import {TaskService} from "../../services/task.service";
 })
 export class FormTaskComponent {
 
+  isBasic: boolean = true;
+
   constructor(
     private router: Router,
     private formService: FormService,
@@ -18,13 +20,19 @@ export class FormTaskComponent {
   ) {
   }
 
+  openBasicForm() {
+    this.isBasic = true;
+  }
+
+  openMemberForm() {
+    this.isBasic = false;
+  }
+
   saveBasicInformation() {
     this.taskService.postTaskData(this.formService.setObjectTask()).subscribe(
-      data => {
-        console.log(data);
+      () => {
       },
-      error => {
-        console.log(error);
+      () => {
       })
   }
 

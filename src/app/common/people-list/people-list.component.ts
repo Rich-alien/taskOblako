@@ -1,33 +1,23 @@
-import {Component, OnInit} from '@angular/core';
-import {FormService} from "../../services/form.service";
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'b-people-list',
   templateUrl: './people-list.component.html',
   styleUrls: ['./people-list.component.less']
 })
-export class PeopleListComponent implements OnInit {
+export class PeopleListComponent {
+  @Input()
   peoples: string[] = [];
+
   peopleData: string[] = [];
 
-  constructor(private formService: FormService) {
-  }
 
   addPeople(member: string) {
     this.peopleData.push(member);
   }
 
   getBlueColor(member: string): boolean {
-    let booleanValue = false;
-    this.peopleData.forEach(people => {
-      booleanValue = people === member;
-    })
-    return booleanValue;
+    return this.peopleData.includes(member, 0);
   }
 
-  ngOnInit() {
-    this.formService.getAllMembersData().subscribe(members => {
-      this.peoples = members as string[];
-    })
-  }
 }

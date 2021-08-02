@@ -9,8 +9,8 @@
                   (click)="openCalendar()">
     </b-text-field>
   </div>
-  <div class="calendar__area" *ngIf="isOpened">
-
+  <div *ngIf="isOpened"
+       class="calendar__area">
     <div class="calendar__area-data">
       <svg-icon
         class="calendar__area-arrowL"
@@ -21,11 +21,11 @@
            (click)="openChoseMonth()">
         <h4 *ngIf="!isOpenChoseMonth">{{selectedMonth}},</h4>
         <h4 class="calendar__area-year">{{choseYear}}</h4>
-          <svg-icon
-            *ngIf="!isOpenChoseMonth"
-            class="calendar__area-triangle"
-            src="assets/icons/triangle.svg">
-          </svg-icon>
+        <svg-icon
+          *ngIf="!isOpenChoseMonth"
+          class="calendar__area-triangle"
+          src="assets/icons/triangle.svg">
+        </svg-icon>
       </div>
       <svg-icon
         class="calendar__area-arrowR"

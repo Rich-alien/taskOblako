@@ -14,6 +14,8 @@ import {
 })
 export class CalendarComponent implements OnInit {
 
+  @Output() handleClick: EventEmitter<object> = new EventEmitter();
+
   selectedMonth = 'Январь';
 
   hasText: boolean = false
@@ -32,8 +34,6 @@ export class CalendarComponent implements OnInit {
 
   monthData: string[] = ["Январь", "Февраль", "Март", "Апрель", "Май",
     "Июнь", "Июль", "Август", "Сентебрь", "Октябрь", "Ноябрь", "Декабрь"];
-
-  @Output() handleClick: EventEmitter<any> = new EventEmitter();
 
   openCalendar(): void {
     this.isOpened = !this.isOpened;
@@ -57,6 +57,14 @@ export class CalendarComponent implements OnInit {
     if (this.isOpenChoseMonth) {
       this.choseYear++;
       this.setData();
+    } else if (!this.isOpenChoseMonth && this.selectedMonth !== "Декабрь") {
+      let index = this.monthData.findIndex(el => el === this.selectedMonth);
+      this.selectedMonth = this.monthData[index + 1];
+      this.setData();
+    } else {
+      this.choseYear++;
+      this.selectedMonth = "Январь";
+      this.setData();
     }
   }
 
@@ -64,11 +72,18 @@ export class CalendarComponent implements OnInit {
     if (this.isOpenChoseMonth) {
       this.choseYear--;
       this.setData();
+    } else if (!this.isOpenChoseMonth && this.selectedMonth !== "Январь") {
+      let index = this.monthData.findIndex(el => el === this.selectedMonth);
+      this.selectedMonth = this.monthData[index - 1];
+      this.setData();
+    } else {
+      this.choseYear--;
+      this.selectedMonth = "Декабрь";
+      this.setData();
     }
   }
 
   abbreviatedDateDisplay(): string {
-
     if (this.selectedDay === 0 || this.selectedMonth === '') {
       this.hasText = false;
       return '';
@@ -84,13 +99,6 @@ export class CalendarComponent implements OnInit {
       "month": this.selectedMonth,
       "year": this.choseYear
     });
-    console.log(
-      {
-        "day": this.selectedDay,
-        "month": this.selectedMonth,
-        "year": this.choseYear
-      }
-    )
   }
 
   ngOnInit() {

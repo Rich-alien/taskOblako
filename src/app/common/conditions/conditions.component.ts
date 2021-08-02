@@ -12,7 +12,9 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConditionsComponent {
+
   @Output() handleClick: EventEmitter<string> = new EventEmitter();
+
   selectItem: string = '';
 
   conditions: string[] = [

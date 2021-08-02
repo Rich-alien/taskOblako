@@ -1,7 +1,9 @@
 <div class='text-field'
-     [class._true]="text">
-  <div *ngIf="!text" class="text-field__block"></div>
-  <span *ngIf="text" class="text-field__label">{{label}}</span>
+     [class._true]="text && hasUnderLine">
+  <div *ngIf="!text"
+       class="text-field__block"></div>
+  <span *ngIf="text"
+        class="text-field__label">{{label}}</span>
   <div class="text-field__text">
     <div class="text-field__text-area">
       <div *ngIf="hasIcon"
@@ -13,22 +15,17 @@
       <h4 class="text-field__placeholder"
           *ngIf="!text">{{label}}</h4>
     </div>
-    <span
-      *ngIf="!text"
-      class='text-field__arrow-wrapper'
-      [class._rotate]='isOpened'>
-      <svg-icon
-        class='text-field__icon icon'
-        src='assets/icons/arrow.svg'
+    <span *ngIf="!text"
+          class='text-field__arrow-wrapper'
+          [class._rotate]='isOpened'>
+      <svg-icon class='text-field__icon icon'
+                src='assets/icons/arrow.svg'
       ></svg-icon>
     </span>
-    <svg-icon
-      *ngIf="text && hasIcon"
-      class="text-field__cross"
-      (click)="deleteText()"
-      src='assets/icons/cross.svg'>
+    <svg-icon *ngIf="text && hasIcon"
+              class="text-field__cross"
+              (click)="deleteText()"
+              src='assets/icons/cross.svg'>
     </svg-icon>
-
   </div>
-
 </div>

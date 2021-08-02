@@ -15,7 +15,4 @@ export class FilterComponent {
     "Очное обучение менеджеров"
   ]
 
-  changeValue(value: any) {
-    console.log(value.target.value);
-  }
 }

@@ -6,18 +6,25 @@
                 src="assets/icons/tick.svg"
                 (click)="saveBasicInformation()">
       </svg-icon>
-      <div
-        class="form-task__title-cross"
-        (click)="closePopup()">
+      <div class="form-task__title-cross"
+           (click)="closePopup()">
         <svg-icon src="assets/icons/cross.svg"></svg-icon>
       </div>
     </div>
   </div>
   <div class="form-task__title-panel">
-    <b-text-field class="form-task__title-basic" text="Основное"></b-text-field>
-    <b-text-field text="Участники"></b-text-field>
+    <b-text-field [hasUnderLine]="isBasic"
+                  class="form-task__title-nav"
+                  text="Основное"
+                  (click)="openBasicForm()"
+    ></b-text-field>
+    <b-text-field [hasUnderLine]="!isBasic"
+                  class="form-task__title-nav"
+                  text="Участники"
+                  (click)="openMemberForm()"
+    ></b-text-field>
   </div>
-  <b-form-basic></b-form-basic>
-  <!--Will be implemented later-->
-  <!-- <b-form-members></>b-form-members>-->
+  <div class="form-task__horizon-line"></div>
+  <b-form-basic [switchForm]="isBasic"
+  ></b-form-basic>
 </div>

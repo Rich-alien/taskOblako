@@ -1,31 +1,27 @@
 <div class="filter">
   <b-search></b-search>
   <div class="filter__desktop">
-    <b-selector
-      placeholderSelector="Выберите одну"
-      [hasIcon]="true"
-      titleSelector="Програма"
-      [itemList]="eventsData">
+    <b-selector placeholderSelector="Выберите одну"
+                [hasIcon]="true"
+                titleSelector="Програма"
+                [itemList]="eventsData">
     </b-selector>
-    <b-selector
-      placeholderSelector="Период"
-      titleSelector="Период"
-      [hasIcon]="true"
-      [itemList]="eventsData">
+    <b-selector placeholderSelector="Период"
+                titleSelector="Период"
+                [hasIcon]="true"
+                [itemList]="eventsData">
     </b-selector>
-    <b-selector
-      placeholderSelector="Статус"
-      titleSelector="Статус"
-      [hasIcon]="true"
-      [itemList]="eventsData">
+    <b-selector placeholderSelector="Статус"
+                titleSelector="Статус"
+                [hasIcon]="true"
+                [itemList]="eventsData">
     </b-selector>
   </div>
   <div class="filter__mobile">
-    <b-selector
-      placeholderSelector="Сортровка"
-      titleSelector="Сортровка"
-      [hasIcon]="true"
-      [itemList]="eventsData">
+    <b-selector placeholderSelector="Сортровка"
+                titleSelector="Сортровка"
+                [hasIcon]="true"
+                [itemList]="eventsData">
     </b-selector>
   </div>
 </div>

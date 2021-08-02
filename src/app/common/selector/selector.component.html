@@ -1,28 +1,25 @@
 <div #selector class='selector'>
   <span *ngIf="selectedItems.length"
         class='selector__title'
-        [class._normal] = '!hasIconMan'
-  >{{titleSelector}}</span>
+        [class._normal]='!hasIconMan'>{{titleSelector}}</span>
   <label class='selector__input-container'>
     <svg-icon *ngIf="hasIconMan"
-      class='selector__input-men icon'
-      src="assets/icons/icon-avatar.svg"></svg-icon>
+              class='selector__input-men icon'
+              src="assets/icons/icon-avatar.svg"></svg-icon>
     <input class='selector__input'
            [class._delete]="!hasIconMan"
            [placeholder]='placeholderSelector'
            [value]='selectedHint'
            (input)='handleChange($event)'/>
-    <svg-icon
-      *ngIf="!selectedItems.length && hasIcon"
-      class='selector__input-arrow-wrapper icon'
-      [class._rotate]='isOpened'
-      src='assets/icons/arrow.svg'
+    <svg-icon *ngIf="!selectedItems.length && hasIcon"
+              class='selector__input-arrow-wrapper icon'
+              [class._rotate]='isOpened'
+              src='assets/icons/arrow.svg'
     ></svg-icon>
-    <svg-icon
-      *ngIf="selectedItems.length  && hasIcon"
-      class="selector__input-cross icon"
-      (click)="deleteText()"
-      src='assets/icons/cross.svg'>
+    <svg-icon *ngIf="selectedItems.length  && hasIcon"
+              class="selector__input-cross icon"
+              (click)="deleteText()"
+              src='assets/icons/cross.svg'>
     </svg-icon>
   </label>
   <div *ngIf='isOpened'
@@ -39,21 +36,18 @@
       </h4>
       <div *ngIf='isMultiMode'
            class='selector__list-text'
-           [class._checked]='isItemSelected(item)'>
-        {{item}}
-      </div>
+           [class._checked]='isItemSelected(item)'>{{item}}</div>
       <!--Will be implemented later-->
       <!--<b-checkbox></b-checkbox>-->
     </div>
     <div class='selector__notification'>
     <span class='selector__list-alert'
-          [class._invisible]='isNotFound'>
-      Не найдено
-      </span>
+          [class._invisible]='isNotFound'>Не найдено</span>
       <b-button *ngIf='isAddControlActive && !isNotFound'
                 class='selector__notification-button'
                 text='Добавить'
-                (click)='addItem()'></b-button>
+                (click)='addItem()'>
+      </b-button>
     </div>
   </div>
 </div>
