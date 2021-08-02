@@ -136,7 +136,7 @@
         {
           "date": {
             "day": 3,
-            "month": "Январь",
+            "month": "янв",
             "year": 2021
           },
           "time": {
@@ -148,19 +148,19 @@
         {
           "date": {
             "day": 28,
-            "month": "Январь",
+            "month": "янв",
             "year": 2021
           },
           "time": {
             "hour": "21",
             "minute": "00"
           },
-          "coach": "Яндекс"
+          "coach": "янв"
         },
         {
           "date": {
             "day": 11,
-            "month": "Январь",
+            "month": "янв",
             "year": 2021
           },
           "time": {

@@ -12,8 +12,18 @@ export class PeopleListComponent {
   @Output() handleClick: EventEmitter<string[]> = new EventEmitter();
 
   peopleData: string[] = [];
+  hisActive: boolean = false;
 
-  active(people: string) {
+  chooseAllPeople(): void {
+    if (!(this.peopleData.length === this.peoples.length)) {
+      this.peopleData = this.peoples;
+    } else {
+      this.peopleData = [];
+    }
+    this.hisActive = !this.hisActive
+  }
+
+  active(people: string): boolean {
     return this.peopleData.includes(people, 0);
   }
 

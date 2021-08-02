@@ -24,22 +24,22 @@
                     placeholderSelector="Группа"
                     titleSelector="Группа"
                     [hasIcon]="true"
-                    [itemList]="eventsData">
+                    [itemList]="groupData">
         </b-selector>
         <b-selector class="form-basic__filter-selector"
                     placeholderSelector="Должность"
                     titleSelector="Должность"
                     [hasIcon]="true"
-                    [itemList]="eventsData">
+                    [itemList]="positionData">
         </b-selector>
         <b-selector class="form-basic__filter-selector"
                     placeholderSelector="Стаж"
                     titleSelector="Стаж"
                     [hasIcon]="true"
-                    [itemList]="eventsData">
+                    [itemList]="experienceData">
         </b-selector>
       </div>
-      <b-filter-setting></b-filter-setting>
+      <b-filter-setting [count]="membersData.length" label=" пользователей"></b-filter-setting>
       <b-people-list
         [peoples]="membersData"
       ></b-people-list>

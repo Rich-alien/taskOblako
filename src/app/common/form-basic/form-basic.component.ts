@@ -24,6 +24,26 @@ export class FormBasicComponent implements OnInit {
     "Вклады: теория и практика",
     "Очное обучение менеджеров"
   ];
+  groupData = [
+    "Администрирование",
+    "Дизайн",
+    "Фронт",
+    "Бэкенд"
+  ];
+  positionData = [
+    "Менеджер",
+    "Джун",
+    "Мидл",
+    "Сенсей",
+    "СенсейX2"
+  ];
+  experienceData = [
+    "1-2 лет",
+    "2-3 лет",
+    "3-4 лет",
+    "4-5 лет",
+    "5-6 лет"
+  ];
 
   membersData: string[] = [];
   taskData = [];

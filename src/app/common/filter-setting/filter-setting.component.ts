@@ -8,5 +8,8 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 })
 export class FilterSettingComponent {
   @Input()
-  taskData: string[] = [];
+  count: number = 0;
+
+  @Input()
+  label: string = ' сессии';
 }

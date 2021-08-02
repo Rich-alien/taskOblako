@@ -4,7 +4,11 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-
+  padding: 10px 8px;
+  margin-left: -8px;
+  &:hover{
+    background: @color-grey-light;
+  }
   &__text {
     color: rgba(0, 0, 0, 0.54);
 
@@ -50,6 +54,7 @@
 
   &__block {
     &-dot {
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;

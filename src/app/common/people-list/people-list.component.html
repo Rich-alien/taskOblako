@@ -1,6 +1,12 @@
 <div class="people-list">
   <div class="people-list__all-container">
-    <div class="people-list__dot"></div>
+    <div class="people-list__dot"
+    (click)="chooseAllPeople()">
+      <svg-icon
+        *ngIf="hisActive"
+        class="people-list__dot-svg"
+        src="assets/icons/tick-blue.svg"></svg-icon>
+    </div>
     <h4 class="people-list__all">Все пользователи</h4>
   </div>
   <ng-container *ngFor="let people of peoples">
