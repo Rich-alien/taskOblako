@@ -15,9 +15,21 @@
   </div>
   <div class="task__horizon-line"></div>
   <b-filter></b-filter>
-<!--  <div class="task__information">-->
-<!--    <span class="task__information-text">{{taskData.length}} сессии</span>-->
-<!--  </div>-->
+  <div class="task__information">
+    <h4 class="task__information-data">{{taskData.length}} сессии</h4>
+    <div class="task__information-filter">
+      <svg-icon
+        class="task__information-filter-svg"
+        src="assets/icons/setting.svg"></svg-icon>
+      <h4 class="task__information-text">Настроить фильтр</h4>
+    </div>
+    <div class="task__information-delete">
+      <svg-icon
+        class="task__information-delete-svg"
+        src="assets/icons/cross.svg"></svg-icon>
+      <h4 class="task__information-text">Сбросить</h4>
+    </div>
+  </div>
   <div class="task__title">
     <span class="task__title-data">Дата начала</span>
     <span class="task__title-name">Название</span>

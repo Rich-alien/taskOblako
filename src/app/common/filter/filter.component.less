@@ -11,11 +11,12 @@
     flex-direction: column;
 
   }
+
   &__desktop {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    //margin-right: 24px;
+    align-items: center;
     @media @mobile {
       display: none;
     }
@@ -28,21 +29,35 @@
     }
   }
 
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 40px;
+  }
+
   &__input {
+    text-align: justify;
+    margin-left: -16px;
     padding-left: 31px;
-    padding-bottom: 7px;
+    padding-bottom: 6px;
     border: none;
     border-bottom: 1px solid @color-grey-middle-first;
     outline: none;
+    &::placeholder{
+      color: @color-grey-middle;
+    }
     @media @mobile {
       width: 322px;
       margin-bottom: 34px;
     }
+
     &-icon {
       content: "";
       position: relative;
-      left: 3px;
-      top: 22px;
+      left: 0;
+      bottom: 6px;
     }
 
     &:focus {

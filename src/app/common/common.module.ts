@@ -17,7 +17,7 @@ import {TrainingComponent} from "./trening/training.component";
 import {NavInformationComponent} from "./nav-information/nav-information.component";
 import {FilterComponent} from "./filter/filter.component";
 import {CalendarComponent} from "./calendare/calendar.component";
-
+import {ConditionsComponent} from "./conditions/conditions.component";
 
 
 @NgModule({
@@ -40,7 +40,8 @@ import {CalendarComponent} from "./calendare/calendar.component";
     TimeComponent,
     TrainingComponent,
     NavInformationComponent,
-    FilterComponent
+    FilterComponent,
+    ConditionsComponent
   ],
   exports: [
     ButtonComponent,
@@ -55,7 +56,8 @@ import {CalendarComponent} from "./calendare/calendar.component";
     TimeComponent,
     TrainingComponent,
     NavInformationComponent,
-    FilterComponent
+    FilterComponent,
+    ConditionsComponent
   ]
 
 })

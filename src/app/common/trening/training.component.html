@@ -1,12 +1,22 @@
 <div class="training">
-  <b-calendar (handleClick)="getDate($event)"></b-calendar>
-  <b-time (handleClick)="getTime($event)"></b-time>
   <b-selector
-    class="training__coach"
-    placeholderSelector="Тренер"
-    [hasIcon]='true'
-    titleSelector="Тренер"
-    [itemList]="coachData"
+    class="training__event"
+    placeholderSelector="Мероприятие"
+    titleSelector="Мероприятие"
+    [itemList]="eventData"
     (handleClick)="getCoach($event)"
   ></b-selector>
+  <div class="training__time">
+    <b-calendar (handleClick)="getDate($event)"></b-calendar>
+    <b-time (handleClick)="getTime($event)"></b-time>
+    <b-selector
+      class="training__coach"
+      placeholderSelector="Тренер"
+      [hasIcon]='true'
+      [hasIconMan]='true'
+      titleSelector="Тренер"
+      [itemList]="coachData"
+      (handleClick)="getCoach($event)"
+    ></b-selector>
+  </div>
 </div>

@@ -18,6 +18,12 @@ export class TrainingComponent {
     "Гугл",
     "Яндекс",
   ];
+  eventData = [
+    "Страхование без потерь",
+    "Страховой случай или как помочь клиенту",
+    "Главные правила продаж",
+    "Главные правила покупки"
+  ];
   private date: Object = {};
   private time: Object = {};
   private coach: string[] = [];

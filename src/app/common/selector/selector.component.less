@@ -4,22 +4,25 @@
   width: 100%;
   padding-top: 17px;
   height: 40px;
-
+  position: relative;
   &__title {
     position: absolute;
     top: 0;
     margin-left: 31px;
     color: @color-grey-middle;
-
+    &._normal{
+      margin-left: 0;
+    }
   }
 
   &__input {
+    text-overflow: ellipsis;
     padding-left: 31px;
     width: 100%;
     padding-bottom: 6px;
     background-color: @color-white;
     border: none;
-    border-bottom: 2px solid @color-grey-middle-first;
+    border-bottom: 1px solid @color-grey-middle-first;
     cursor: pointer;
     outline: none;
 
@@ -61,7 +64,7 @@
       position: absolute;
       cursor: pointer;
       right: 0;
-      top: 0;
+      top: -3px;
     }
 
     &-arrow {
@@ -88,7 +91,7 @@
   }
 
   &__input:focus {
-    border-bottom: 2px solid @color-blue;
+    border-bottom: 1px solid @color-blue;
   }
 
   &__list {

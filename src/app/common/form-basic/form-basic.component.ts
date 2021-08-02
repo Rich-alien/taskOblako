@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import {TaskService} from "../../services/task.service";
 import {FormService} from "../../services/form.service";
 
@@ -9,6 +9,9 @@ import {FormService} from "../../services/form.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormBasicComponent implements OnInit {
+  @Input()
+  isBasic: boolean = false;
+
   eventsData = [
     "Страхование с заботой о клиенте",
     "Главные правила продаж",
@@ -19,6 +22,7 @@ export class FormBasicComponent implements OnInit {
 
   membersData: string[] = [];
   taskData = [];
+
 
   constructor(private taskService: TaskService,
               private formService: FormService) {

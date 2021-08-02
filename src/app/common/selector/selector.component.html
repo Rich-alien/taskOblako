@@ -1,23 +1,25 @@
 <div #selector class='selector'>
   <span *ngIf="selectedItems.length"
-        class='selector__title'>{{titleSelector}}</span>
+        class='selector__title'
+        [class._normal] = '!hasIconMan'
+  >{{titleSelector}}</span>
   <label class='selector__input-container'>
-    <svg-icon *ngIf="hasIcon"
+    <svg-icon *ngIf="hasIconMan"
       class='selector__input-men icon'
       src="assets/icons/icon-avatar.svg"></svg-icon>
     <input class='selector__input'
-           [class._delete]="!hasIcon"
+           [class._delete]="!hasIconMan"
            [placeholder]='placeholderSelector'
            [value]='selectedHint'
            (input)='handleChange($event)'/>
     <svg-icon
-      *ngIf="!selectedItems.length"
+      *ngIf="!selectedItems.length && hasIcon"
       class='selector__input-arrow-wrapper icon'
       [class._rotate]='isOpened'
       src='assets/icons/arrow.svg'
     ></svg-icon>
     <svg-icon
-      *ngIf="selectedItems.length"
+      *ngIf="selectedItems.length  && hasIcon"
       class="selector__input-cross icon"
       (click)="deleteText()"
       src='assets/icons/cross.svg'>

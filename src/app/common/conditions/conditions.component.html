@@ -1,0 +1,16 @@
+<div class='conditions'>
+  <h3 class='conditions__title'>Условия записи по коду</h3>
+  <div *ngFor="let condition of conditions"
+       class="conditions__list"
+  >
+    <div class="conditions__list-circle"
+         [class._select]="condition === selectItem"
+         (click)="saveCondition(condition)">
+      <div *ngIf="condition === selectItem"
+           class="conditions__list-mini"></div>
+    </div>
+    <h4 class="conditions__list-text"
+        [class._select]="condition === selectItem">
+      {{condition}}</h4>
+  </div>
+</div>

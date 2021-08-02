@@ -1,5 +1,5 @@
 <div class="filter">
-  <div>
+  <div class="filter__search">
     <svg-icon
       class="filter__input-icon"
       src="assets/icons/lens.svg">
@@ -12,24 +12,28 @@
   <div class="filter__desktop">
     <b-selector
       placeholderSelector="Выберите одну"
+      [hasIcon]="true"
       titleSelector="Програма"
       [itemList]="eventsData">
     </b-selector>
     <b-selector
-      placeholderSelector="Выберите одну"
+      placeholderSelector="Период"
       titleSelector="Период"
+      [hasIcon]="true"
       [itemList]="eventsData">
     </b-selector>
     <b-selector
-      placeholderSelector="Выберите одну"
+      placeholderSelector="Статус"
       titleSelector="Статус"
+      [hasIcon]="true"
       [itemList]="eventsData">
     </b-selector>
   </div>
   <div class="filter__mobile">
     <b-selector
-      placeholderSelector="Выберите одну"
+      placeholderSelector="Сортровка"
       titleSelector="Сортровка"
+      [hasIcon]="true"
       [itemList]="eventsData">
     </b-selector>
   </div>
