@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TaskService} from "../../services/task.service";
 
 @Component({
@@ -15,6 +15,8 @@ export class TaskComponent implements OnInit {
     typeOfLessons: number = 0;
 
     isGroupList: boolean = true;
+
+    showTripletPopup: boolean = false;
 
     constructor(private taskService: TaskService) {
     }

@@ -1,5 +1,6 @@
 <div class='text-field'
-     [class._true]="text && hasUnderLine">
+     [class._true]="text && hasUnderLine"
+     [class._big]="hasBigHeight">
   <div *ngIf="!text"
        class="text-field__block"></div>
   <span *ngIf="text"

@@ -8,7 +8,9 @@
       </svg-icon>
       <div class="form-task__title-cross"
            (click)="closePopup()">
-        <svg-icon src="assets/icons/cross.svg"></svg-icon>
+        <svg-icon
+          class="form-task__cross"
+          src="assets/icons/cross.svg"></svg-icon>
       </div>
     </div>
   </div>
@@ -16,11 +18,13 @@
     <b-text-field [hasUnderLine]="isBasic"
                   class="form-task__title-nav"
                   text="Основное"
+                  [hasBigHeight]="true"
                   (click)="openBasicForm()"
     ></b-text-field>
     <b-text-field [hasUnderLine]="!isBasic"
                   class="form-task__title-nav"
                   text="Участники"
+                  [hasBigHeight]="true"
                   (click)="openMemberForm()"
     ></b-text-field>
   </div>

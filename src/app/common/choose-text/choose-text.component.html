@@ -1,0 +1,22 @@
+<div class="choose-text">
+  <div *ngIf="hasIconCircle"
+       class="choose-text__circle"
+       [class._select]="hisActive"
+       [class._disabled]='isDisabled'
+       (click)="saveValue(text)">
+    <div *ngIf="hisActive"
+         class="choose-text__circle-mini"></div>
+  </div>
+  <div *ngIf="hasIconBlock"
+       class="choose-text__block-dot"
+       [class._disabled]='isDisabled'
+       (click)="saveValue(text)">
+    <svg-icon
+      *ngIf="hisActive"
+      class="choose-text__block-svg"
+      src="assets/icons/tick-blue.svg"></svg-icon>
+  </div>
+  <h4 class="choose-text__text"
+      [class._select]="hisActive">
+    {{text}}</h4>
+</div>

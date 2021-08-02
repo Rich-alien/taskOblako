@@ -10,7 +10,6 @@ import {FormTaskComponent} from "./form-task/form-task.component";
 import {SelectorComponent} from "./selector/selector.component";
 import {FormBasicComponent} from "./form-basic/form-basic.component";
 import {TextFieldComponent} from "./text-field/text-field.component";
-import {InputFieldComponent} from "./input-field/input-field.component";
 import {TimeComponent} from "./time/time.component";
 import {TrainingComponent} from "./trening/training.component";
 import {NavInformationComponent} from "./nav-information/nav-information.component";
@@ -20,6 +19,7 @@ import {ConditionsComponent} from "./conditions/conditions.component";
 import {SearchComponent} from "./search/search.component";
 import {FilterSettingComponent} from "./filter-setting/filter-setting.component";
 import {PeopleListComponent} from "./people-list/people-list.component";
+import {ChooseTextComponent} from "./choose-text/choose-text.component";
 
 
 @NgModule({
@@ -37,7 +37,6 @@ import {PeopleListComponent} from "./people-list/people-list.component";
     SelectorComponent,
     FormBasicComponent,
     TextFieldComponent,
-    InputFieldComponent,
     CalendarComponent,
     TimeComponent,
     TrainingComponent,
@@ -46,7 +45,8 @@ import {PeopleListComponent} from "./people-list/people-list.component";
     ConditionsComponent,
     SearchComponent,
     FilterSettingComponent,
-    PeopleListComponent
+    PeopleListComponent,
+    ChooseTextComponent
   ],
   exports: [
     ButtonComponent,
@@ -56,7 +56,6 @@ import {PeopleListComponent} from "./people-list/people-list.component";
     SelectorComponent,
     FormBasicComponent,
     TextFieldComponent,
-    InputFieldComponent,
     CalendarComponent,
     TimeComponent,
     TrainingComponent,
@@ -65,7 +64,8 @@ import {PeopleListComponent} from "./people-list/people-list.component";
     ConditionsComponent,
     SearchComponent,
     FilterSettingComponent,
-    PeopleListComponent
+    PeopleListComponent,
+    ChooseTextComponent
   ]
 
 })

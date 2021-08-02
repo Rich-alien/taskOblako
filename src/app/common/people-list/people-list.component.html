@@ -4,12 +4,10 @@
     <h4 class="people-list__all">Все пользователи</h4>
   </div>
   <ng-container *ngFor="let people of peoples">
-    <div class="people-list__list"
-         (click)="addPeople(people)">
-      <div class="people-list__dot"
-           [class._active]="getBlueColor(people)"
-      ></div>
-      <h4 class="people-list__text">{{people}}</h4>
-    </div>
+    <b-choose-text [text]="people"
+                   [hisActive]="active(people)"
+                   (handleClick)="addPeople($event)"
+                   [hasIconBlock]="true">
+    </b-choose-text>
   </ng-container>
 </div>

@@ -13,6 +13,7 @@ import {
 })
 export class ConditionsComponent {
 
+
   @Output() handleClick: EventEmitter<string> = new EventEmitter();
 
   selectItem: string = '';
@@ -23,6 +24,9 @@ export class ConditionsComponent {
     "Запросить только имя и фамилию",
     "Не требовать регистрацию, имя и фамилию"
   ]
+  active(condition: string){
+    return this.selectItem === condition;
+  };
 
   saveCondition(condition: string) {
     this.selectItem = condition;

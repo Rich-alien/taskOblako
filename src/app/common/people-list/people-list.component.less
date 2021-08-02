@@ -5,30 +5,32 @@
     margin-left: 8px;
 
     &-container {
+      width: 100%;
+      cursor: pointer;
+      padding: 10px 8px;
+      margin-left: -8px;
       display: flex;
       align-items: center;
       margin-bottom: 20px;
+
+      &:hover {
+        background: @color-grey-light;
+      }
     }
   }
 
-  &__dot {
-    width: 16px;
-    height: 16px;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 2px;
-
-    &._active {
-      background: @color-blue;
-    }
-  }
-
-  &__text {
-    margin-left: 40px;
-  }
 
   &__list {
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 8px;
+    margin-left: -8px;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+
+    &:hover {
+      background: @color-grey-light;
+    }
   }
 }

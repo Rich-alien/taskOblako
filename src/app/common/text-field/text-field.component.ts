@@ -11,6 +11,9 @@ export class TextFieldComponent implements OnInit {
   hasUnderLine: boolean = false;
 
   @Input()
+  hasBigHeight: boolean = false;
+
+  @Input()
   isOpened: boolean = false;
 
   @Input()

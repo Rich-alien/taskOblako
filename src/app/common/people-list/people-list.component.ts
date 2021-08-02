@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'b-people-list',
@@ -9,15 +9,18 @@ export class PeopleListComponent {
   @Input()
   peoples: string[] = [];
 
+  @Output() handleClick: EventEmitter<string[]> = new EventEmitter();
+
   peopleData: string[] = [];
 
+  active(people: string) {
+    return this.peopleData.includes(people, 0);
+  }
 
   addPeople(member: string) {
     this.peopleData.push(member);
+    this.handleClick.emit(this.peopleData)
   }
 
-  getBlueColor(member: string): boolean {
-    return this.peopleData.includes(member, 0);
-  }
 
 }
