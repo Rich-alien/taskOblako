@@ -58,6 +58,6 @@ export class TimeComponent implements OnInit {
   }
 
   setData() {
-    this.handleClick.emit({"hour": this.hourData, "minute": this.minuteData});
+    this.handleClick.emit({"hour": this.selectedHour, "minute": this.selectedMinute});
   }
 }

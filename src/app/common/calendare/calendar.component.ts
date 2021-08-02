@@ -94,6 +94,11 @@ export class CalendarComponent implements OnInit {
   }
 
   setData() {
+    console.log({
+      "day": this.selectedDay,
+      "month": this.selectedMonth,
+      "year": this.choseYear
+    });
     this.handleClick.emit({
       "day": this.selectedDay,
       "month": this.selectedMonth,

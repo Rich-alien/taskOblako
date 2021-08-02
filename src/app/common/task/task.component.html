@@ -3,12 +3,12 @@
     <b-text-field class="task__navigation-group"
                   [hasUnderLine]="isGroupList"
                   text="Групповое"
-                  [hasBigHeight] = "true"
+                  [hasBigHeight]="true"
                   (click)="switchToGroup()">
     </b-text-field>
     <b-text-field class="task__navigation-individual"
                   [hasUnderLine]="!isGroupList"
-                  [hasBigHeight] = "true"
+                  [hasBigHeight]="true"
                   text="Индивидуальное"
                   (click)="switchToIndividual()">
     </b-text-field>
@@ -52,11 +52,27 @@
         <h4 class="task__list-progress__text">
           {{progress}}
         </h4>
-        <div class="task__list-setting__icon">
-          <svg-icon src="assets/icons/triplet.svg"></svg-icon>
-          <div *ngIf="showTripletPopup"></div>
+        <div class="task__list-setting__icon"
+             (click)="openTripletPopup(task.id)">
+          <svg-icon src="assets/icons/triplet.svg"
+          ></svg-icon>
         </div>
       </div>
+
     </div>
+  </div>
+  <div class="task__popup" *ngIf="showTripletPopup">
+    <div class="task__popup-patch"
+         (click)="patchItem()">
+      <svg-icon class="task__popup-icon"
+                src="assets/icons/pen.svg"
+      ></svg-icon>
+      <h4>Редактировать</h4></div>
+    <div class="task__popup-delete"
+         (click)="deleteItem()">
+      <svg-icon class="task__popup-icon ._delete"
+                src="assets/icons/delete.svg"
+      ></svg-icon>
+      <h4>Удалить слот</h4></div>
   </div>
 </div>

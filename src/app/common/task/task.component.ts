@@ -7,8 +7,10 @@ import {TaskService} from "../../services/task.service";
     styleUrls: ['./task.component.less']
 })
 export class TaskComponent implements OnInit {
-
+    // creat dto
     taskData: any;
+
+    idToBeDeleteBlock: string = ''
 
     progress: number = 0;
 
@@ -21,12 +23,6 @@ export class TaskComponent implements OnInit {
     constructor(private taskService: TaskService) {
     }
 
-    ngOnInit() {
-        this.taskService.getTaskData().subscribe(data => {
-            this.taskData = data;
-        });
-    }
-
     switchToGroup(): void {
         this.typeOfLessons = 0;
         this.isGroupList = true;
@@ -35,5 +31,30 @@ export class TaskComponent implements OnInit {
     switchToIndividual(): void {
         this.typeOfLessons = 1;
         this.isGroupList = false;
+    }
+
+    openTripletPopup(id: string): void {
+        this.idToBeDeleteBlock = id;
+        this.showTripletPopup = !this.showTripletPopup;
+
+    }
+
+    deleteItem() {
+        this.taskService.deleteTaskData(this.idToBeDeleteBlock).subscribe(
+            () => {
+            },
+            error => console.log(error));
+        this.showTripletPopup = false;
+    }
+
+    patchItem() {
+        // url to /form with data[id]
+        this.showTripletPopup = false;
+    }
+
+    ngOnInit() {
+        this.taskService.getTaskData().subscribe(data => {
+            this.taskData = data;
+        });
     }
 }
