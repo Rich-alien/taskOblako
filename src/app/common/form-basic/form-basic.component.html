@@ -1,20 +1,57 @@
 <div class="form-basic">
- <div *ngIf="isBasic">
-   <b-selector
-     class="form-basic__program"
-     placeholderSelector="Программа"
-     titleSelector="Программа"
-     [isAddControlActive]="true"
-     [itemList]="eventsData"
-     (handleClick)="getEventName($event)">
-   </b-selector>
-   <h3 class="form-basic__title">Мероприятие, дата и время проведения</h3>
-   <div *ngFor="let event of getCountEvent(3); let i = index"
-        class="form-basic__date">
-     <b-training
-       (handleClick)="getTraining($event,i)">
-     </b-training>
-   </div>
-   <b-conditions></b-conditions>
- </div>
+  <div *ngIf="isBasic">
+    <b-selector
+      class="form-basic__program"
+      placeholderSelector="Программа"
+      titleSelector="Программа"
+      [isAddControlActive]="true"
+      [itemList]="eventsData"
+      (handleClick)="getEventName($event)">
+    </b-selector>
+    <h3 class="form-basic__title">Мероприятие, дата и время проведения</h3>
+    <div *ngFor="let event of getCountEvent(3); let i = index"
+         class="form-basic__date">
+      <b-training
+        (handleClick)="getTraining($event,i)">
+      </b-training>
+    </div>
+    <b-conditions></b-conditions>
+  </div>
+  <div class="form-basic__people" *ngIf="!isBasic">
+    <div class="form-basic__filter-setting">
+      <h3 class="form-basic__people-title">Доступные участники</h3>
+      <div class="form-basic__filter">
+        <b-search class="form-basic__filter-search"></b-search>
+        <b-selector
+          class="form-basic__filter-selector"
+          placeholderSelector="Группа"
+          titleSelector="Группа"
+          [hasIcon]="true"
+          [itemList]="eventsData">
+        </b-selector>
+        <b-selector
+          class="form-basic__filter-selector"
+          placeholderSelector="Должность"
+          titleSelector="Должность"
+          [hasIcon]="true"
+          [itemList]="eventsData">
+        </b-selector>
+        <b-selector
+          class="form-basic__filter-selector"
+          placeholderSelector="Стаж"
+          titleSelector="Стаж"
+          [hasIcon]="true"
+          [itemList]="eventsData">
+        </b-selector>
+      </div>
+      <b-filter-setting></b-filter-setting>
+      <b-people-list></b-people-list>
+    </div>
+    <svg-icon class="form-basic__member-icon"
+      src="assets/icons/arrowheads.svg"></svg-icon>
+    <div class="form-basic__member">
+      <h3 class="form-basic__people-title">Участники мероприятия</h3>
+      <b-people-list></b-people-list>
+    </div>
+  </div>
 </div>

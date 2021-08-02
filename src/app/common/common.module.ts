@@ -11,13 +11,15 @@ import {SelectorComponent} from "./selector/selector.component";
 import {FormBasicComponent} from "./form-basic/form-basic.component";
 import {TextFieldComponent} from "./text-field/text-field.component";
 import {InputFieldComponent} from "./input-field/input-field.component";
-
 import {TimeComponent} from "./time/time.component";
 import {TrainingComponent} from "./trening/training.component";
 import {NavInformationComponent} from "./nav-information/nav-information.component";
 import {FilterComponent} from "./filter/filter.component";
 import {CalendarComponent} from "./calendare/calendar.component";
 import {ConditionsComponent} from "./conditions/conditions.component";
+import {SearchComponent} from "./search/search.component";
+import {FilterSettingComponent} from "./filter-setting/filter-setting.component";
+import {PeopleListComponent} from "./people-list/people-list.component";
 
 
 @NgModule({
@@ -41,7 +43,10 @@ import {ConditionsComponent} from "./conditions/conditions.component";
     TrainingComponent,
     NavInformationComponent,
     FilterComponent,
-    ConditionsComponent
+    ConditionsComponent,
+    SearchComponent,
+    FilterSettingComponent,
+    PeopleListComponent
   ],
   exports: [
     ButtonComponent,
@@ -57,7 +62,10 @@ import {ConditionsComponent} from "./conditions/conditions.component";
     TrainingComponent,
     NavInformationComponent,
     FilterComponent,
-    ConditionsComponent
+    ConditionsComponent,
+    SearchComponent,
+    FilterSettingComponent,
+    PeopleListComponent
   ]
 
 })

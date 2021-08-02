@@ -1,14 +1,5 @@
 <div class="filter">
-  <div class="filter__search">
-    <svg-icon
-      class="filter__input-icon"
-      src="assets/icons/lens.svg">
-    </svg-icon>
-    <input class="filter__input"
-           placeholder="Поиск"
-           type="text"
-           (change)="changeValue($event)">
-  </div>
+  <b-search></b-search>
   <div class="filter__desktop">
     <b-selector
       placeholderSelector="Выберите одну"

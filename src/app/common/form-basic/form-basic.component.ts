@@ -10,7 +10,7 @@ import {FormService} from "../../services/form.service";
 })
 export class FormBasicComponent implements OnInit {
   @Input()
-  isBasic: boolean = false;
+  isBasic: boolean = true;
 
   eventsData = [
     "Страхование с заботой о клиенте",

@@ -28,41 +28,4 @@
       display: block;
     }
   }
-
-  &__search {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    height: 40px;
-  }
-
-  &__input {
-    text-align: justify;
-    margin-left: -16px;
-    padding-left: 31px;
-    padding-bottom: 6px;
-    border: none;
-    border-bottom: 1px solid @color-grey-middle-first;
-    outline: none;
-    &::placeholder{
-      color: @color-grey-middle;
-    }
-    @media @mobile {
-      width: 322px;
-      margin-bottom: 34px;
-    }
-
-    &-icon {
-      content: "";
-      position: relative;
-      left: 0;
-      bottom: 6px;
-    }
-
-    &:focus {
-      border: none;
-      border-bottom: 1px solid @color-blue;
-    }
-  }
 }

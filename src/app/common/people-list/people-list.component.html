@@ -1,0 +1,15 @@
+<div class="people-list">
+  <div class="people-list__all-container">
+    <div class="people-list__dot"></div>
+    <h4 class="people-list__all">Все пользователи</h4>
+  </div>
+
+  <ng-container *ngFor="let people of peoples">
+    <div (click)="addPeople(people)" class="people-list__list">
+      <div class="people-list__dot"
+           [class._active]="getBlueColor(people)"
+      ></div>
+      <h4 class="people-list__text">{{people}}</h4>
+    </div>
+  </ng-container>
+</div>
